@@ -10,8 +10,8 @@ Options:
   -h --help                     Show this screen.
   --version                     Show version.
   --config=<config>             Path to config file (.json is expected).
-  --log-level=<log_level>       Log level [default=DEBUG].
-  --coupon-code=<coupon_code>   Discount offers [default=SWIGGYIT].
+  --log-level=<log_level>       Log level [default: INFO].
+  --coupon-code=<coupon_code>   Discount offers [default: ].
 """
 import os
 import json
@@ -66,8 +66,10 @@ def main():
     registered_phone, address_id, all_items = order_food(config_file, config)
 
     login(registered_phone)
+    log.info("Setting items in cart.")
     update_cart(all_items)
     time.sleep(1.5)
+    log.info("Applying coupon code='%s'", coupon_code)
     apply_coupon_code(coupon_code=coupon_code)
     time.sleep(1.5)
     place_order("SwiggyPay", address_id)
