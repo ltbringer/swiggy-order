@@ -86,7 +86,7 @@ def login(registered_phone):
 
     response = verify_otp(otp, csrf_token)
     validate_response(response)
-    log.info(pformat(response.json()))
+    log.debug(pformat(response.json()))
 
 
 def update_cart(payload, quantity=1):
@@ -95,7 +95,7 @@ def update_cart(payload, quantity=1):
     payload["cart"]["cartItems"][0]["quantity"] = quantity
     response = session.post(CART_URL, json=payload)
     validate_response(response)
-    log.info(pformat(response.json()))
+    log.debug(pformat(response.json()))
 
 
 def apply_coupon_code(coupon_code=""):
@@ -105,7 +105,7 @@ def apply_coupon_code(coupon_code=""):
     payload = {"couponCode": coupon_code, "_csrf": csrf_token}
     response = session.post(APPLY_COUPON_URL, json=payload)
     validate_response(response)
-    log.info(pformat(response.json()))
+    log.debug(pformat(response.json()))
 
 
 def place_order(payment_method, address_id):
@@ -122,4 +122,5 @@ def place_order(payment_method, address_id):
 
     response = session.post(PLACE_ORDER_URL, json=payload)
     validate_response(response)
-    log.info(pformat(response.json()))
+    log.debug(pformat(response.json()))
+    log.info("Order placed ✨🌟 🥘🥙🥗 🌟✨ !")
