@@ -62,7 +62,7 @@ An example payload looks like this:
         
         ]
     },
-    "_csrf": <str> # this 
+    "_csrf": <str> # this is managed by this project, you can leave it empty or let it have its value when copied. The project will set it right.
     }
 }
 ```
