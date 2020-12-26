@@ -89,10 +89,11 @@ Once added you can retain the items in a list.
 `address_id` can be found through the web-interface, monitor the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API when trying to click the "DELIVER HERE" button, post the checkout phase.
 
 ![Address updates after clicking the DELIVER HERE button](./images/deliver_here.png)
+
 Address updates after clicking the DELIVER HERE button
 
 ![Look at updated address_id](./images/payload_behrouz_biryani.png)
-Notice the updated value of `address_id`. This can be kept within `config.json`, should be a one time thing.
+Notice the updated value of `address_id`. This can be kept within `config.json`, should be a one time addition.
 
 ### Payment Method
 Currently, this project assumes that payments are made via swiggy money only. I didn't want to solve for every payment method, those would anyway require callbacks to ensure safety. That is a lot of work and somehow there is a server someone needs to maintain.
