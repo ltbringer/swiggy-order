@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "swiggy-order"
-version = "0.1.2"
+version = "0.1.3"
 description = "Order food via terminal."
 authors = ["Amresh Venugopal <amresh.venugopal@gmail.com>"]
 license = "MIT"
@@ -21,4 +21,3 @@ order-food = 'swiggy_order:main'
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
-
