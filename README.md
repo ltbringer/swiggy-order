@@ -69,6 +69,7 @@ An example payload looks like this:
 This can be obtained via opening the network tab and monitoring the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API, when an item is selected from the menu and it shows up in the cart. The reason for copying the payload is to prevent code changes if the API structure / restaurant-ids / menu-item-ids / ??? were to change. The open sourced nature of this tool means fixing such issues is a matter of PRs but it didn't occur to me as time well spent. None of the changes I can forsee would be frequent, so changing the `config.json` seems to be much more time efficient than changing the code.
 
 ![Payload appears after clicking the ADD button](./images/click_add_button.png)
+
 Payload appears after clicking the ADD button
 
 ![payload for behrouz biryani](./images/payload_behrouz_biryani.png)
