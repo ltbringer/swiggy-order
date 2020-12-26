@@ -68,8 +68,14 @@ An example payload looks like this:
 ```
 This can be obtained via opening the network tab and monitoring the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API, when an item is selected from the menu and it shows up in the cart. The reason for copying the payload is to prevent code changes if the API structure / restaurant-ids / menu-item-ids / ??? were to change. The open sourced nature of this tool means fixing such issues is a matter of PRs but it didn't occur to me as time well spent. None of the changes I can forsee would be frequent, so changing the `config.json` seems to be much more time efficient than changing the code.
 
+![Payload appears after clicking the ADD button](./images/click_add_button.png)
+![payload for behrouz biryani](./images/payload_behrouz_biryani.png)
+
 ### Address 
 `address_id` can be found through the web-interface, monitor the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API when trying to click the "DELIVER HERE" button, post the checkout phase.
+
+![Address updates after clicking the DELIVER HERE button](./images/deliver_here.png)
+![Look at updated address_id](./images/payload_behrouz_biryani.png)
 
 ### Payment Method
 Currently, this project assumes that payments are made via swiggy money only. I didn't want to solve for every payment method, those would anyway require callbacks to ensure safety. That is a lot of work and somehow there is a server someone needs to maintain.
