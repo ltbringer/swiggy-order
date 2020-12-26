@@ -66,13 +66,13 @@ An example payload looks like this:
     }
 }
 ```
-This can be obtained via opening the network tab and monitoring the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API, when an item is selected from the menu and it shows up in the cart. The reason for copying the payload is to prevent code changes if the API structure / restaurant-ids / menu-item-ids / ??? were to change. The open sourced nature of this tool means fixing such issues are a matter of PRs but it didn't occur to me as time well spent. None of the changes I can forsee would be frequent where changing the `config.json` seems to be much more time efficient than changing the code.
+This can be obtained via opening the network tab and monitoring the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API, when an item is selected from the menu and it shows up in the cart. The reason for copying the payload is to prevent code changes if the API structure / restaurant-ids / menu-item-ids / ??? were to change. The open sourced nature of this tool means fixing such issues is a matter of PRs but it didn't occur to me as time well spent. None of the changes I can forsee would be frequent, so changing the `config.json` seems to be much more time efficient than changing the code.
 
 ### Address 
-`address_id` can be found through the web-interface monitor the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API when trying to click the "DELIVER HERE" button, post the checkout button.
+`address_id` can be found through the web-interface, monitor the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API when trying to click the "DELIVER HERE" button, post the checkout phase.
 
 ### Payment Method
-Currently, this project assumes that payments are to be made via swiggy money only. I didn't want to solve for every payment method, those would anyway require callbacks to ensure safety. That is a lot of work and somehow there is a server someone needs to maintain.
+Currently, this project assumes that payments are made via swiggy money only. I didn't want to solve for every payment method, those would anyway require callbacks to ensure safety. That is a lot of work and somehow there is a server someone needs to maintain.
 
 ## Fin
 Eat well my friends. It will show as you age, I can already feel the difference from my 20s and I am not even 30 yet.
