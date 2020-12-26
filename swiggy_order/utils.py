@@ -8,7 +8,7 @@ from typing import Union
 
 log = logging.getLogger("swiggy-order")
 fmt = "%(asctime)s:%(msecs)03d %(name)s [%(filename)s:%(lineno)s] %(levelname)s %(message)s"
-coloredlogs.install(level=logging.DEBUG, logger=log, fmt=fmt)
+coloredlogs.install(level=logging.INFO, logger=log, fmt=fmt)
 
 
 def change_log_level(level: str) -> None:
