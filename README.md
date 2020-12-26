@@ -71,5 +71,8 @@ This can be obtained via opening the network tab and monitoring the response for
 ### Address 
 `address_id` can be found through the web-interface monitor the response for the `POST` requests on `https://www.swiggy.com/dapi/cart` API when trying to click the "DELIVER HERE" button, post the checkout button.
 
+### Payment Method
+Currently, this project assumes that payments are to be made via swiggy money only. I didn't want to solve for every payment method, those would anyway require callbacks to ensure safety. That is a lot of work and somehow there is a server someone needs to maintain.
+
 ## Fin
 Eat well my friends. It will show as you age, I can already feel the difference from my 20s and I am not even 30 yet.
