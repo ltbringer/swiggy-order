@@ -98,7 +98,9 @@ def update_cart(payload, quantity=1):
     log.info(pformat(response.json()))
 
 
-def apply_coupon_code(coupon_code="SWIGGYIT"):
+def apply_coupon_code(coupon_code=""):
+    if not coupon_code:
+        return
     _, csrf_token = make_connection()
     payload = {"couponCode": coupon_code, "_csrf": csrf_token}
     response = session.post(APPLY_COUPON_URL, json=payload)
