@@ -100,12 +100,11 @@ Notice the updated value of `address_id`. This can be kept within `config.json`,
 Currently, this project assumes that payments are made via swiggy money only. I didn't want to solve for every payment method, those would anyway require callbacks to ensure safety. That is a lot of work and somehow there is a server someone needs to maintain. 💳💸
 
 ## Demo
-Tried it again today.
 ![Demo](./images/demo.png)
 
 - Run the script with a coupon code.
 - Select item(s) to order. Do note I haven't written any code to exclude items from different outlets.
-- Provide the OTP from your registered mobile number. You would have to do this everytime as long as this runs as a script.
+- Provide the OTP from your registered mobile number. You would have to do this everytime, as long as this runs as a script.
 
 ![Result](./images/result.png)
 
