@@ -10,6 +10,7 @@ from swiggy_order.constants import (
     SWIGGY_SEND_OTP_URL,
     SWIGGY_VERIFY_OTP_URL,
     STATUS_FLAG,
+    STATUS_MESSAGE,
     CART_URL,
     APPLY_COUPON_URL,
     PLACE_ORDER_URL,
@@ -28,7 +29,7 @@ def get_cookie(cookies, name):
 def validate_response(response):
     try:
         if response.json().get(STATUS_FLAG) != 0:
-            log.error(pformat(response))
+            log.error(response.json().get(STATUS_MESSAGE))
             raise ValueError(f"Non-zero {STATUS_FLAG}!")
     except AttributeError:
         log.error(response.text)
