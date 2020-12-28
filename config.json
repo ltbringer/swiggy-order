@@ -1,0 +1,29 @@
+{
+    "registered_phone": "<Your phone number>",
+    "address_id": "<Your address-id, refer to README.md>",
+    "menu": [
+        {
+            "name": "New york Cheesecake",
+            "comment": "This would work for you if you live near me. BTW comments are not required at all 😉.",
+            "payload": {
+                "flushFirst": true,
+                "cart": {
+                    "restaurantId": 35849,
+                    "address_id": "",
+                    "couponCode": "",
+                    "cartItems": [
+                        {
+                            "addons": [],
+                            "variants": [],
+                            "menu_item_id": 53335198,
+                            "quantity": 1
+                        }
+                    ],
+                    "mealItems": [],
+                    "subscriptionItems": []
+                },
+                "_csrf": "Iw4JkduEKJeo-l1OuyJ-jtAoDecFMXXb9suuliIY"
+            }
+        }
+    ]
+}

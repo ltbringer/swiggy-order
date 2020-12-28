@@ -33,6 +33,7 @@ A very minimal `config.json` example:
     }]
 }
 ```
+There is a `config.json` provided with this code for reference, and if you live near me you can get that cheesecake delivered 😄.
 
 ### Payload
 An example payload looks like this:
