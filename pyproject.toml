@@ -9,7 +9,6 @@ license = "MIT"
 python = "^3.8"
 requests = "^2.25.1"
 docopt = "^0.6.2"
-prompt_toolkit = "^3.0.8"
 coloredlogs = "^15.0"
 
 [tool.poetry.dev-dependencies]

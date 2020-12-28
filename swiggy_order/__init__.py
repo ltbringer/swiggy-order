@@ -18,19 +18,9 @@ import json
 import time
 
 from docopt import docopt
-from prompt_toolkit import prompt
-from prompt_toolkit.shortcuts import checkboxlist_dialog
 
 from swiggy_order.apis import login, update_cart, apply_coupon_code, place_order
 from swiggy_order.utils import log, change_log_level
-
-
-def combine_items(menu_items, address_id):
-    combined_cart = [menu_items[0]]
-    for menu_item in menu_items[1:]:
-        combined_cart[0]["cart"]["cartItems"].append(menu_item["cart"]["cartItems"][0])
-    combined_cart[0]["cart"]["addressId"] = address_id
-    return combined_cart[0]
 
 
 def extract_if_valid(config_file, config, property):
@@ -43,12 +33,24 @@ def order_food(config_file, config):
     menu = extract_if_valid(config_file, config, "menu")
     registered_phone = extract_if_valid(config_file, config, "registered_phone")
     address_id = extract_if_valid(config_file, config, "address_id")
+    choice = None
+    item_index = -1
+    menu_items = [f'{i + 1}) {item["name"]}' for i, item in enumerate(menu)]
 
-    checkboxes = [(i, item["name"]) for i, item in enumerate(menu)]
-    item_indices = checkboxlist_dialog(title="Menu", text="Pick items from this menu:", values=checkboxes).run()
-    selected_items = [item["payload"] for i, item in enumerate(menu) if i in item_indices]
-    all_items = combine_items(selected_items, address_id)
-    return registered_phone, address_id, all_items
+    while not choice:
+        log.info("%s", "\n".join(menu_items))
+        choice = input("Enter item id: ")
+        
+        if not choice.isdigit():
+            choice = None
+            continue
+        
+        item_index = int(choice) - 1
+        if item_index > len(menu_items):
+            choice = None
+
+    selected_items = menu[item_index]["payload"]
+    return registered_phone, address_id, selected_items
 
 
 def main():
