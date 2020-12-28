@@ -38,7 +38,7 @@ def order_food(config_file, config):
     menu_items = [f'{i + 1}) {item["name"]}' for i, item in enumerate(menu)]
 
     while not choice:
-        log.info("%s", "\n".join(menu_items))
+        log.info("\n\t\tMENU\n\n%s", "\n".join(menu_items))
         choice = input("Enter item id: ")
         
         if not choice.isdigit():
