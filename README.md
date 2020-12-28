@@ -22,7 +22,7 @@ poetry run order-food --config=config.json [--coupon-code=<?>] [--log-level=DEBU
 
 ## Config
 A very minimal `config.json` example:
-```
+```json
 {
   "registered_phone":"<10-digit-phone-number>",
   "address_id":"<address-id>",
@@ -36,13 +36,13 @@ A very minimal `config.json` example:
 
 ### Payload
 An example payload looks like this:
-```
+```python
 {
     "flushFirst":0,
     "cart":{
-        "restaurantId":<int>,
+        "restaurantId":"<int>",
         "address_id":"<str>",
-        "couponCode":<str>,
+        "couponCode": "<str>",
         "cartItems":[
         {
             "addons":[
@@ -51,8 +51,8 @@ An example payload looks like this:
             "variants":[
             
             ],
-            "menu_item_id":<int>,
-            "quantity":<int>
+            "menu_item_id":"<int>",
+            "quantity":"<int>"
         }
         ],
         "mealItems":[
@@ -62,7 +62,7 @@ An example payload looks like this:
         
         ]
     },
-    "_csrf": <str> # this is managed by this project, you can leave it empty or let it have its value when copied. The project will set it right.
+    "_csrf": "<str>" # this is managed by this project, you can leave it empty or let it have its value when copied. The project will set it right.
     }
 }
 ```
@@ -75,12 +75,11 @@ Payload appears after clicking the ADD button
 ![payload for behrouz biryani](./images/payload_behrouz_biryani.png)
 Payload for adding this dish from behrouz biryani to your cart 🍛. You can add an entry in `config.json` as:
 
-```
+```json
 {
-    ...
     "menu": [{
         "name": "biryani boneless",
-        "payload": <PASTE_HERE>
+        "payload": "<PASTE_HERE>"
     }]
 }
 ```
