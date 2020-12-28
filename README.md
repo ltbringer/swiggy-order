@@ -22,7 +22,7 @@ poetry run order-food --config=config.json [--coupon-code=<?>] [--log-level=DEBU
 
 ## Config
 A very minimal `config.json` example:
-```json
+```python
 {
   "registered_phone":"<10-digit-phone-number>",
   "address_id":"<address-id>",
