@@ -17,7 +17,7 @@ I have tried uninstalling swiggy and in no more than 3 days I install it back. I
 ## Installation and Usage
 ```
 pip install swiggy-order
-poetry run order-food --config=config.json [--coupon-code=<?>] [--log-level=DEBUG]
+order-food --config=/path/to/config.json [--coupon-code=<?>] [--log-level=DEBUG]
 ```
 
 ## Config
